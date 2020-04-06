@@ -29,6 +29,7 @@ public class RegistraCliente extends HttpServlet {
 		String pass = req.getParameter("pass");
 		Cliente c = new Cliente(user, pass);
 		
+		
 		AccessoDBCliente accessoC = new AccessoDBCliente();
 		try {
 			if (accessoC.aggiuntaClienteAlDatabase(c)) {
