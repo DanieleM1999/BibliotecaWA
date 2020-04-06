@@ -12,9 +12,10 @@
 	<form action="login">
 		<label for="SceltaOperazioni"></label> <select
 			name="SceltaOperazioni">
-			<h1>Aceddi come </h1>
+			<h1>Accedi come </h1>
 			<option value="HomeDipendente">Dipendente</option>
-			<option value="HomeCliente">Cliente</option><br>
+			<option value="HomeCliente">Cliente</option>
+			<br>
 		</select> <input type="submit" value="Conferma">
 	</form>
 	

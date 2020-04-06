@@ -20,13 +20,12 @@ public class AccessoDBCliente {
 
 	public HashMap<String, Cliente> creaMappa() throws ClassNotFoundException, SQLException {
 		HashMap<String, Cliente> mappaClienti = new HashMap<>();
-		String query = "Select * from biblioteca.cliente ; ";
-		
+		String query = "Select * from cliente ; ";
 		Statement statement = con().createStatement();
 		ResultSet resultSet = statement.executeQuery(query);
 		while (resultSet.next()) {
 			String username = resultSet.getString("Username");
-			String pass = resultSet.getString("pass");
+			String pass = resultSet.getString("Pass");
 			Cliente c = new Cliente(username, pass);
 			mappaClienti.put(username, c);
 		}
@@ -43,7 +42,7 @@ public class AccessoDBCliente {
 
 	public boolean aggiuntaClienteAlDatabase(Cliente c) throws ClassNotFoundException, SQLException {
 		if (!(controlloEsistenzaCliente(c.getUsernameC()))) {
-			String query = "Insert into utenti (Username,pass) values (?,?) ;";
+			String query = "Insert into cliente (Username,Password) values (?,?) ;";
 			PreparedStatement preparedStatement = con().prepareStatement(query);
 			preparedStatement.setString(1, c.getUsernameC());
 			preparedStatement.setString(2, c.getPassC());
