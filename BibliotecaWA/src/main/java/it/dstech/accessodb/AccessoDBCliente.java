@@ -21,6 +21,7 @@ public class AccessoDBCliente {
 	public HashMap<String, Cliente> creaMappa() throws ClassNotFoundException, SQLException {
 		HashMap<String, Cliente> mappaClienti = new HashMap<>();
 		String query = "Select * from biblioteca.cliente ; ";
+		
 		Statement statement = con().createStatement();
 		ResultSet resultSet = statement.executeQuery(query);
 		while (resultSet.next()) {
