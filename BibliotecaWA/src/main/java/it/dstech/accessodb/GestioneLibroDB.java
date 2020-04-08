@@ -24,7 +24,7 @@ public class GestioneLibroDB {
 		Statement statement = con().createStatement();
 		ResultSet resultSet = statement.executeQuery(query);
 		while (resultSet.next()) {
-			long id = resultSet.getLong("idProdotto");
+		//	long id = resultSet.getLong("idProdotto");
 			String titolo = resultSet.getString("Titolo");
 			String autore = resultSet.getString("Autore");
 			int quantitaTotale = resultSet.getInt("QuantitaTotale");
@@ -64,7 +64,7 @@ public class GestioneLibroDB {
 		if (controlloEsistenzaLibro(l.getTitolo())) {
 			return false;
 		} else {
-			String query = "Insert into libro (Titolo, Autore, Quantita) values (?,?,?) ;";
+			String query = "Insert into libro (Titolo, Autore, QuantitaTotale, QuantitaNoleggio) values (?,?,?,?) ;";
 			PreparedStatement preparedStatement = con().prepareStatement(query);
 			preparedStatement.setString(1, l.getTitolo());
 			preparedStatement.setString(2, l.getAutore());

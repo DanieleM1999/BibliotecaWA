@@ -15,8 +15,10 @@
 <input type="text" placeholder="titolo" name="titolo" id="titolo"><br>
 <label for="autore">Inserisci autore:</label>
 <input type="text" placeholder="autore" name="autore" id="autore"><br>
-<label for="qnt">Inserisci quantita:</label>
-<input type="text" placeholder="00" name="qnt" id="qnt"><br>
+<label for="qntt">Inserisci quantita totale:</label>
+<input type="text" placeholder="00" name="qntt" id="qntt"><br>
+<label for="qntn">Inserisci quantita noleggio:</label>
+<input type="text" placeholder="00" name="qntn" id="qntn"><br>
 <input style="padding: 8px;margin-left:15%;margin-top:0.5%;" type="submit" value="Conferma" >
 </form> 
 <br><br><br>

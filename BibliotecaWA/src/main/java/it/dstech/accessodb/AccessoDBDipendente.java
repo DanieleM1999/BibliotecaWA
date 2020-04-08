@@ -26,8 +26,8 @@ public class AccessoDBDipendente {
 		Statement statement = con().createStatement();
 		ResultSet resultSet = statement.executeQuery(query);
 		while (resultSet.next()) {
-			String username = resultSet.getString("user");
-			String pass = resultSet.getString("pass");
+			String username = resultSet.getString("Username");
+			String pass = resultSet.getString("Password");
 			Dipendente d = new Dipendente(username, pass);
 			mappaDipendenti.put(username, d);
 		}
