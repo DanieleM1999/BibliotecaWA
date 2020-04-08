@@ -1,1 +1,1 @@
-This project manage a webapplication which represent a digital library.
+This project manage a webapplication which represent a virtual library.
