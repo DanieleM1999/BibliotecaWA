@@ -16,7 +16,7 @@ import it.dstech.modelli.Dipendente;
 @WebServlet("/registraDipendente")
 
 public class RegistraDipendente extends HttpServlet {
-
+//s
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		req.setAttribute("messaggio", "hai tentato di accedere manualmente");
