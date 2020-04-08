@@ -20,7 +20,7 @@ public class RegistraCliente extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		req.setAttribute("messaggio", "hai tentato di accedere manualmente");
-		req.getRequestDispatcher("Login.jsp").forward(req, resp);
+		req.getRequestDispatcher("Start.jsp").forward(req, resp);
 	}
 
 	@Override

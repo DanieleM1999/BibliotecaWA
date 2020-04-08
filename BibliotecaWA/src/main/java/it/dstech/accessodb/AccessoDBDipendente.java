@@ -7,7 +7,11 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.HashMap;
 
+import javax.servlet.annotation.WebServlet;
+
 import it.dstech.modelli.Dipendente;
+
+//@WebServlet("/accediDipendente")
 
 public class AccessoDBDipendente {
 
@@ -22,7 +26,7 @@ public class AccessoDBDipendente {
 		Statement statement = con().createStatement();
 		ResultSet resultSet = statement.executeQuery(query);
 		while (resultSet.next()) {
-			String username = resultSet.getString("Username");
+			String username = resultSet.getString("user");
 			String pass = resultSet.getString("pass");
 			Dipendente d = new Dipendente(username, pass);
 			mappaDipendenti.put(username, d);
@@ -40,7 +44,7 @@ public class AccessoDBDipendente {
 
 	public boolean aggiuntaDipendenteAlDatabase(Dipendente d) throws ClassNotFoundException, SQLException {
 		if (!(controlloEsistenzaDipendente(d.getUsernameD()))) {
-			String query = "Insert into utenti (Username,pass) values (?,?) ;";
+			String query = "Insert into dipendente (Username,Password) values (?,?) ;";
 			PreparedStatement preparedStatement = con().prepareStatement(query);
 			preparedStatement.setString(1, d.getUsernameD());
 			preparedStatement.setString(2, d.getPassD());
