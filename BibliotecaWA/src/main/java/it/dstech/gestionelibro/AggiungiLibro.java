@@ -32,7 +32,7 @@ public class AggiungiLibro extends HttpServlet {
 		try {
 			if (gest.aggiuntaLibroDB(l)) {
 				req.setAttribute("messaggio", "libro aggiunto correttamente...");
-				req.getRequestDispatcher("Fine.jsp").forward(req, resp);
+				req.getRequestDispatcher("FineD.jsp").forward(req, resp);
 			} else {
 				req.setAttribute("messaggio", "possibile errore nel inserimento dati; oppure prodotto già esistente");
 				req.getRequestDispatcher("MenuDipendente.jsp").forward(req, resp);
