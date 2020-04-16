@@ -125,7 +125,7 @@ public class GestioneLibroDB {
 	
 	public boolean modificaQuantitaNoleggio(String titolo, int quantita) throws ClassNotFoundException, SQLException {
 		if (controlloEsistenzaLibro(titolo)) {
-			int qN = quantitaAttualeTotale(titolo) + quantita;
+			int qN = quantitaAttualeNoleggio(titolo) + quantita;
 			String query = "update libro set QuantitaNoleggio = ? where Titolo = ? ;";
 			PreparedStatement preparedStatement = con().prepareStatement(query);
 			preparedStatement.setInt(1, qN);
